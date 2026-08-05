@@ -11,7 +11,9 @@ const [data,setData]=useState(null);
 
 useEffect(()=>{
 
-axios.get("http://127.0.0.1:8000/analytics")
+axios.get(
+    "https://amazon-customer-support-ai-production.up.railway.app/analytics"
+)
 
 .then(res=>{
 

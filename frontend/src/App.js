@@ -53,13 +53,8 @@ function App() {
 
         try {
 
-            const response = await axios.post(
-                "http://127.0.0.1:8000/chat",
-                {
-                    session_id: sessionId,
-                    message: currentMessage
-                }
-            );
+          const API_URL =
+    "https://amazon-customer-support-ai-production.up.railway.app";
 
             const botMessage = {
                 sender: "bot",
