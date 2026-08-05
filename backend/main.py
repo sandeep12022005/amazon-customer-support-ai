@@ -35,3 +35,6 @@ def home():
     return {
         "message": "Amazon Customer Support AI Backend Running"
     }
+@app.get("/health")
+def health():
+    return {"status": "ok"}
