@@ -13,15 +13,13 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "http://127.0.0.1:3000"
-        # Later add your Vercel URL here
-        # "https://your-project.vercel.app"
+        "http://127.0.0.1:3000",
+        "https://amazon-customer-support-ai.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # ---------------- Routers ----------------
 
 app.include_router(chat_router)
