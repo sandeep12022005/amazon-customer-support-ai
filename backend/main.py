@@ -2,34 +2,33 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.chat import router as chat_router
-from api.history import router as history_router   # NEW
+from api.history import router as history_router
 from api.analytics import router as analytics_router
 
 app = FastAPI(title="Amazon Customer Support AI")
-app.include_router(analytics_router)
+
+# ---------------- CORS ----------------
 
 app.add_middleware(
     CORSMiddleware,
-    app.add_middleware(
-    CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://amazon-customer-support-ai.vercel.app"
+        "http://127.0.0.1:3000"
+        # Later add your Vercel URL here
+        # "https://your-project.vercel.app"
     ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Chat API
-app.include_router(chat_router)
+# ---------------- Routers ----------------
 
-# History API
+app.include_router(chat_router)
 app.include_router(history_router)
+app.include_router(analytics_router)
+
+# ---------------- Home ----------------
 
 @app.get("/")
 def home():
