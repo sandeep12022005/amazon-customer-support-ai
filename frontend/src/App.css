@@ -293,3 +293,40 @@ cursor:not-allowed;
 scroll-behavior:smooth;
 
 }
+.markdown-content {
+    width: 100%;
+    line-height: 1.6;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+    margin: 10px 0;
+    color: #232F3E;
+}
+
+.markdown-content p {
+    margin: 8px 0;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+    margin-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.markdown-content li {
+    margin-bottom: 6px;
+}
+
+.markdown-content strong {
+    font-weight: bold;
+    color: #111;
+}
+
+.markdown-content code {
+    background: #f4f4f4;
+    padding: 2px 5px;
+    border-radius: 4px;
+}

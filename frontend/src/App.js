@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import ReactMarkdown from "react-markdown";
 import AdminDashboard from "./AdminDashboard";
 
 // Railway Backend URL
@@ -142,12 +143,18 @@ function App() {
             }
           >
             <div className="message-content">
-              <span className="avatar">
-                {msg.sender === "user" ? "👤" : "🤖"}
-              </span>
+  <span className="avatar">
+    {msg.sender === "user" ? "👤" : "🤖"}
+  </span>
 
-              <span>{msg.text}</span>
-            </div>
+  <div className="markdown-content">
+    {msg.sender === "bot" ? (
+      <ReactMarkdown>{msg.text}</ReactMarkdown>
+    ) : (
+      <span>{msg.text}</span>
+    )}
+  </div>
+</div>
           </div>
         ))}
 
