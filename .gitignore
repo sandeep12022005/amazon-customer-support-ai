@@ -11,7 +11,7 @@ backend/.env
 frontend/.env
 
 # FAISS databases (optional if large)
-backend/rag/vectorstores/
+# backend/rag/vectorstores/
 
 # VS Code
 .vscode/
